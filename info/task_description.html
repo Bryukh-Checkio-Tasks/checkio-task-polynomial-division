@@ -1,39 +1,47 @@
 <p>
-    <i>( Describe task in general )</i>
+    Earlier we learned how to <a href="http://www.checkio.org/mission/task/info/simplification/">simplify</a>
+    an expression with one variable in the
+    <a href="http://en.wikipedia.org/wiki/Polynomial">Polynomial</a> mission.
+    Now you should try your hand at <a href="http://en.wikipedia.org/wiki/Polynomial_long_division">Polynomial
+    division</a>.
 </p>
 
 <p>
-    Sum two passed ints
-</p>
-
-<p style="text-align: center;">
-    <img class="for_info_only" title="example" src="{{MEDIA}}example.png" alt="example" width="392px"/>
-    <img class="for_editor_only" title="example" src="{{MEDIA}}example.png" alt="example" width="380px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
+    Given two polynomial as a list of two strings in next format:
+<pre>
+    СN*x*x*...(n times)...*x+CN1*x*x*...(n-1 times)...*x+...+C1*x+C0
+    where
+    CN, CN1 ...C1, C0 - constants, integers.
+    if C = 0, then don't show this term (ex. 2*x*x+3).
+    if C = 1, then don't show C. (ex. x*x+2*x), except C0.
+    if C = -1, then don't show C, only "-". (ex. x*x-x), except C0.
+    </pre>
 <p>
-    <strong>Input: </strong> Two arguments. Both are int
+    You should to divide the first polynomial by the second and return the result with remainder as a list of two
+    strings. A remainder of 0 should be returned as an empty string.
+</p>
+<p>
+    <strong>Input: </strong> A list of two strings. A dividend, a divisor.
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> A list of two strings. A result of division, a remainder.
 </p>
-
-
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
+
     <p>
         <strong>Example:</strong>
     </p>
-    <pre class="brush: python">
-checkio(3, 2) == 5
-checkio(5, 7) == 12
-    </pre>
+<pre class="brush: python">checkio(['x*x*x-12*x*x-42', 'x-3']) == ['x*x-9*x-27', '-123']
+checkio(['x*x-1', 'x+1']) == ['x-1', '']
+checkio(['x*x*x+6*x*x+12*x+8', 'x+2']) == ['x*x+4*x+4', '']
+checkio(['x*x*x*x*x+5*x+1', 'x*x']) == ['x*x*x', '5*x+1']</pre>
+
 </div>
+
 
 <p class="for_info_only">
     <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
+    Mathematical software.
 </p>
